@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="PRO-OLEOGEL: reduced-fat sourdough croissants laminated with protein-structured sunflower oil (protein-oil emulgels). Innovation voucher project, USAMV Cluj-Napoca and Dina Selin Sweets, Dej.">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>PRO-OLEOGEL</title>
+<link rel="alternate" hreflang="ro" href="https://usamv-research-projects.github.io/pro-oleogel/">
+<link rel="alternate" hreflang="en" href="https://usamv-research-projects.github.io/pro-oleogel/en.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a dark full-bleed hero with a photograph of a laminated croissant crumb on the right; below it, wide bands alternating a reading column with card grids. */
+:root {
+  --bg: #F7F3EC;
+  --surface: #FFFFFF;
+  --ink: #241B13;
+  --muted: #65584B;
+  --rule: #DDD2C2;
+  --accent: #8A5A12;        /* baked-crust gold, darkened for text contrast */
+  --accent-soft: #F1E5CC;
+  --gold: #8C6A1F;          /* Dina Selin brand gold, darkened for text */
+  --fat: #7C2F2B;           /* conventional fat: comparison bar and placeholders */
+  --fat-soft: #F6E3E0;
+  --hero-bg: #1E1712;
+  --hero-ink: #F8F1E4;
+  --hero-muted: #CDBFA8;
+  --hero-line: #E3B65C;
+  --plate: #FFFFFF;         /* logo plate stays white in both themes */
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17130F; --surface: #211B15; --ink: #F1EAE0; --muted: #B5A897; --rule: #3D3328;
+    --accent: #E3B65C; --accent-soft: #3A2E1A; --gold: #E3C27A; --fat: #F0A9A2; --fat-soft: #3A2220;
+    --hero-bg: #1E1712; --hero-ink: #F8F1E4; --hero-muted: #CDBFA8; --hero-line: #E3B65C; --plate: #FFFFFF;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17130F; --surface: #211B15; --ink: #F1EAE0; --muted: #B5A897; --rule: #3D3328;
+  --accent: #E3B65C; --accent-soft: #3A2E1A; --gold: #E3C27A; --fat: #F0A9A2; --fat-soft: #3A2220;
+  --hero-bg: #1E1712; --hero-ink: #F8F1E4; --hero-muted: #CDBFA8; --hero-line: #E3B65C; --plate: #FFFFFF;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+.wrap { width: 100%; max-width: 62rem; margin-inline: auto; padding-inline: 20px; }
+.stack { display: flex; flex-direction: column; gap: 22px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.08; }
+h2 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 800; letter-spacing: -0.015em; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0; }
+.kicker { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.todo { background: var(--fat-soft); color: var(--fat); border-bottom: 1px dashed var(--fat); padding: 0 4px; font-family: var(--mono); font-size: 0.85em; }
+
+/* hero */
+.hero { background: var(--hero-bg); color: var(--hero-ink); position: relative; overflow: hidden; }
+.hero-photo { position: absolute; top: 0; right: 0; height: 100%; width: min(46%, 560px); object-fit: cover; object-position: center 40%; display: block;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 38%); mask-image: linear-gradient(to right, transparent 0, #000 38%); }
+@media (max-width: 760px) { .hero-photo { width: 100%; opacity: 0.28; -webkit-mask-image: none; mask-image: none; } }
+.hero .wrap { position: relative; padding-block: 22px 56px; display: flex; flex-direction: column; gap: 56px; }
+nav { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 0.92rem; align-items: center; }
+nav a { text-decoration: none; color: var(--hero-muted); font-weight: 500; }
+nav a:hover { color: var(--hero-line); }
+nav a:focus-visible { outline-color: var(--hero-line); }
+nav a.lang { border: 1px solid var(--hero-muted); border-radius: 99px; padding: 0 10px; font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; }
+nav a.lang:hover { border-color: var(--hero-line); }
+nav .brand { color: var(--hero-ink); font-family: var(--display); font-weight: 800; margin-right: auto; letter-spacing: 0.02em; }
+.hero-text { display: flex; flex-direction: column; gap: 18px; max-width: 40rem; }
+.hero .kicker { color: var(--hero-line); }
+h1 { font-size: clamp(2.7rem, 11vw, 5.8rem); font-weight: 800; letter-spacing: -0.035em; line-height: 0.92; }
+h1 span { color: var(--hero-line); }
+.lede { font-size: clamp(1.1rem, 2.6vw, 1.35rem); line-height: 1.4; color: var(--hero-ink); }
+.sub { color: var(--hero-muted); font-size: 0.98rem; }
+
+/* key figures */
+.figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.fig { padding: 22px 16px 22px 0; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.fig b { font-family: var(--display); font-size: 2.4rem; font-weight: 800; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+.fig span { color: var(--muted); font-size: 0.92rem; }
+
+main { display: flex; flex-direction: column; gap: 72px; padding-block: 0 72px; }
+section { display: flex; flex-direction: column; gap: 22px; }
+.cols { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+@media (max-width: 760px) { .cols { grid-template-columns: minmax(0, 1fr); } }
+#about .cols { align-items: center; }
+.prose { display: flex; flex-direction: column; gap: 14px; max-width: 38rem; }
+
+/* saturated-fat comparison: one scale, 0 to 100 % of the conventional product */
+.chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; gap: 18px; }
+.bar-row { display: flex; flex-direction: column; gap: 6px; }
+.bar-row .lab { display: flex; justify-content: space-between; gap: 12px; font-size: 0.92rem; }
+.bar-row .lab b { font-family: var(--mono); font-weight: 500; white-space: nowrap; }
+.track { height: 22px; background: var(--accent-soft); border-radius: 3px; overflow: hidden; position: relative; }
+.track i { display: block; height: 100%; border-radius: 3px; }
+.b-conv { width: 100%; background: var(--fat); }
+.b-new { width: 75%; background: var(--accent); }
+.b-new-range { position: absolute; top: 0; left: 70%; width: 10%; height: 100%; background: repeating-linear-gradient(135deg, transparent 0 4px, color-mix(in srgb, var(--bg) 55%, transparent) 4px 7px); }
+.axis { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
+.chart small { color: var(--muted); font-size: 0.8rem; line-height: 1.45; }
+
+.method-fig { max-width: 100%; }
+.method-fig .plate { background: var(--plate); border: 1px solid var(--rule); border-radius: 8px; padding: 12px; }
+.method-fig img { display: block; width: 100%; height: auto; }
+/* method: real photographs of each step */
+.method { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; counter-reset: m; }
+@media (max-width: 900px) { .method { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .method { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.method li { counter-increment: m; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.method img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 8px; }
+.method b { font-family: var(--display); font-size: 1rem; }
+.method b::before { content: counter(m) " · "; color: var(--accent); }
+.method span { font-size: 0.84rem; color: var(--muted); line-height: 1.4; }
+.method .par { font-family: var(--mono); font-size: 0.76rem; color: var(--accent); }
+
+/* preliminary data */
+.note { font-size: 0.82rem; color: var(--muted); }
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--surface); }
+table.data { border-collapse: collapse; width: 100%; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+table.data th, table.data td { padding: 9px 14px; text-align: right; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+table.data th:first-child, table.data td:first-child { text-align: left; }
+table.data thead th { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+table.data tbody tr:last-child td { border-bottom: 0; }
+table.data .em td { background: var(--accent-soft); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.84rem; color: var(--muted); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.duo { display: flex; flex-direction: column; gap: 4px; }
+.duo .track { height: 14px; }
+.b-y { background: var(--accent); }
+.b-s { background: var(--gold); opacity: 0.55; }
+.crumbs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 700px) { .crumbs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.crumbs img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 16px; }
+.kpi { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; }
+.kpi b { font-family: var(--display); font-size: 1.9rem; font-weight: 800; line-height: 1; color: var(--accent); }
+.kpi span { font-size: 0.9rem; color: var(--muted); }
+
+/* cards */
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 700px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+.obj, .org, .member { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 22px; min-width: 0; }
+.obj, .org { display: flex; flex-direction: column; gap: 10px; }
+.obj .n { font-family: var(--display); font-weight: 800; font-size: 2rem; line-height: 1; color: var(--accent); }
+.obj p, .org p, .member p { color: var(--muted); font-size: 0.96rem; }
+.goal { font-size: 1.15rem; max-width: 46rem; }
+
+/* activities: a real sequence, laid out left to right */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0; counter-reset: s; }
+.steps li { counter-increment: s; border-top: 3px solid var(--accent); padding: 16px 20px 8px 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.steps li::before { content: "Stage " counter(s); font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.steps .wk { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+.steps p { color: var(--muted); font-size: 0.95rem; }
+
+/* 24-week timeline */
+.gantt { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; }
+.g-row { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 12px; align-items: center; font-size: 0.88rem; }
+.g-row > span { color: var(--muted); }
+.g-track { position: relative; height: 16px; background: var(--accent-soft); border-radius: 3px; }
+.g-track i { position: absolute; top: 0; height: 100%; background: var(--accent); border-radius: 3px; }
+.g-axis { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 12px; }
+.g-axis div { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
+@media (max-width: 520px) { .g-row, .g-axis { grid-template-columns: 6.5rem minmax(0, 1fr); } }
+
+/* results */
+ul.plain { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+ul.plain li { padding-left: 20px; position: relative; }
+ul.plain li::before { content: ""; position: absolute; left: 0; top: 0.66em; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+
+figure { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+figcaption { font-size: 0.82rem; color: var(--muted); }
+.side { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+/* team */
+.member { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 18px; align-items: start; }
+.member img { width: 116px; height: 116px; object-fit: cover; object-position: center top; border-radius: 8px; display: block; }
+.member .txt { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.member .links { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.9rem; }
+@media (max-width: 420px) { .member { grid-template-columns: minmax(0, 1fr); } }
+
+/* partners */
+.org .marks { display: flex; gap: 12px; align-items: center; }
+.org .marks img { height: 76px; width: auto; background: var(--plate); border-radius: 6px; padding: 4px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span { font-size: 0.82rem; font-weight: 500; background: var(--accent-soft); color: var(--ink); border-radius: 99px; padding: 3px 12px; }
+.ledger { margin: 0; border-top: 2px solid var(--ink); }
+.ledger div { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 4px 20px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.ledger dt { color: var(--muted); font-size: 0.9rem; }
+.ledger dd { margin: 0; font-weight: 500; font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--mono); font-size: 0.9em; }
+@media (max-width: 560px) { .ledger div { grid-template-columns: 1fr; } }
+
+.contact { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; }
+.mail { font-family: var(--mono); font-size: 1rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 8px 12px; user-select: all; overflow-wrap: anywhere; }
+button.copy { font: inherit; font-size: 0.9rem; font-weight: 600; background: var(--accent); color: var(--bg); border: 0; border-radius: 6px; padding: 9px 14px; cursor: pointer; }
+
+footer { border-top: 2px solid var(--ink); }
+footer .wrap { padding-block: 24px 48px; display: flex; flex-direction: column; gap: 18px; font-size: 0.9rem; color: var(--muted); }
+.logos { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; background: var(--plate); border-radius: 8px; padding: 16px 20px; }
+.logos img { height: 64px; width: auto; }
+</style>
+</head>
+<body>
+<div lang="en">
+<header class="hero" id="top">
+  <img class="hero-photo" src="hero.jpg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <nav aria-label="Sections">
+      <a class="brand" href="#top">PRO-OLEOGEL</a>
+      <a href="#about">About</a>
+      <a href="#objectives">Objectives</a>
+      <a href="#activities">Activities</a>
+      <a href="#results">Results</a>
+      <a href="#team">Team</a>
+      <a href="#partners">Partners</a>
+      <a href="#contact">Contact</a>
+      <a class="lang" href="index.html" hreflang="ro" lang="ro" title="Versiunea în limba română">RO</a>
+    </nav>
+    <div class="hero-text">
+      <span class="kicker">Innovation voucher · USAMV Cluj-Napoca × Dina Selin</span>
+      <h1>PRO<span>-</span>OLEOGEL</h1>
+      <p class="lede">Flaky, layered croissants with less saturated fat: laminated with structured sunflower oil and leavened with sourdough.</p>
+      <p class="sub">Design, development and characterisation of reduced-fat croissants using protein-oil emulgels as laminating-fat replacers and sourdough (maia) as a functional leavening agent</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="figures" aria-label="The project in figures">
+      <div class="fig"><b>20-30%</b><span>target reduction in saturated fat</span></div>
+      <div class="fig"><b>2</b><span>leavening routes: yeast and sourdough</span></div>
+      <div class="fig"><b>6 months</b><span>July - December 2026</span></div>
+      <div class="fig"><b>4</b><span>objectives, from emulgel to transfer</span></div>
+          </div>
+  </div>
+
+  <section id="about"><div class="wrap cols">
+    <div class="prose">
+      <span class="kicker">About the project</span>
+      <h2>The hardest dough to reformulate</h2>
+      <p>Puff pastry and croissant dough are among the most demanding matrices for fat reduction. The laminating fat is not only a nutritional component: it separates the dough sheets, holds the layers apart during baking and produces the volume, flakiness and honeycomb crumb of a good croissant. Conventional laminating fats deliver this performance at the cost of a high saturated-fat content.</p>
+      <p>Emulgels are emulsions whose continuous phase is gelled. PRO-OLEOGEL structures sunflower oil, rich in unsaturated fatty acids, with whey protein isolate and ι-carrageenan into a plastic, sheetable fat replacer with a lower fat content than conventional laminating fats. Sourdough (<em>maia</em>) replaces part of the commercial yeast, adding flavour and making use of a traditional, low-cost fermentation.</p>
+      <p>The research is carried out by a team from the Faculty of Food Science and Technology at USAMV Cluj-Napoca and adapted to the production capacity of Dina Selin Sweets, an artisanal pastry and confectionery workshop in Dej.</p>
+    </div>
+    <div class="side">
+      <div class="chart" role="img" aria-label="Saturated fat relative to the conventional croissant: conventional 100 percent; reformulated target 70 to 80 percent">
+        <h3>Saturated fat, relative to the conventional croissant</h3>
+        <div class="bar-row">
+          <div class="lab"><span>Conventional laminating fat</span><b>100%</b></div>
+          <div class="track"><i class="b-conv"></i></div>
+        </div>
+        <div class="bar-row">
+          <div class="lab"><span>Emulgel, project target</span><b>70-80%</b></div>
+          <div class="track"><i class="b-new"></i><span class="b-new-range"></span></div>
+        </div>
+        <div class="axis"><span>0</span><span>25</span><span>50</span><span>75</span><span>100%</span></div>
+        <small>Target set in the project proposal (a reduction of at least 20-30%); actual values will be measured on the finished croissants.</small>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><figure class="method-fig">
+    <h3>How the emulgel is made</h3>
+    <div class="plate"><img src="method.png" alt="Five steps of emulgel production: 1, whey protein isolate and iota-carrageenan dissolved in cold water at 4 °C; 2, sunflower oil added and homogenised; 3, Ultra-Turrax at 15,000 rpm for 5 minutes; 4, drying and setting at 65 °C for 36 hours; 5, final emulgels V1 and V2, used as laminating-fat replacers" width="1672" height="509"></div>
+    <figcaption>Emulsion-template method: the structuring agents are hydrated in cold water, sunflower oil is emulsified into the protein-carrageenan phase, and the emulsion is partly dried into a solid emulgel used as a laminating-fat replacer.</figcaption>
+  </figure></div></section>
+
+
+  <section id="objectives"><div class="wrap stack">
+    <span class="kicker">Objectives</span>
+    <h2>What we set out to do</h2>
+    <p class="goal">Reduced-fat croissants that keep the layered structure, volume and texture of the classic product, with an improved lipid profile and a sustainable, locally sourced formulation.</p>
+    <div class="grid2">
+      <div class="obj"><span class="n">O1</span><h3>Emulgels as laminating-fat replacers</h3><p>Producing protein-oil emulgels from sunflower oil, whey protein isolate and ι-carrageenan, and characterising their viscoelastic behaviour, structure and thermal stability to select the formulation best suited to lamination and baking.</p></div>
+      <div class="obj"><span class="n">O2</span><h3>Reduced-fat croissant recipe</h3><p>Reformulating the laminated dough with emulgel and sourdough, and adapting kneading, fermentation, folding and baking parameters to the product and to the beneficiary's production conditions.</p></div>
+      <div class="obj"><span class="n">O3</span><h3>Quality and safety of the finished product</h3><p>Proximate composition, sugars and organic acids (HPLC-RID), lipid profile and volatile compounds (GC-MS), rheology and texture profile analysis, yeasts and moulds, and consumer evaluation by hedonic and JAR tests, compared with conventional croissants.</p></div>
+      <div class="obj"><span class="n">O4</span><h3>Sustainability and transfer</h3><p>A screening life cycle assessment against the conventional product, an analysis of fit with circular-economy principles, and technological recommendations and good-practice guides for Dina Selin.</p></div>
+    </div>
+  </div></section>
+
+  <section id="activities"><div class="wrap stack">
+    <span class="kicker">Activities</span>
+    <h2>From the gel to the pastry counter in 6 months</h2>
+    <ol class="steps">
+      <li><span class="wk">Weeks 1-6</span><h3>Emulgel development</h3><p>Producing and characterising protein-oil emulgels; selecting the formulation for lamination.</p></li>
+      <li><span class="wk">Weeks 6-13</span><h3>Croissant reformulation</h3><p>Laminated dough with emulgel and sourdough; optimising folding, fermentation and baking.</p></li>
+      <li><span class="wk">Weeks 14-21</span><h3>Characterisation and evaluation</h3><p>Physico-chemical, rheological, textural, microbiological and sensory analyses.</p></li>
+      <li><span class="wk">Weeks 20-24</span><h3>Sustainability and transfer</h3><p>Screening LCA, circular-economy assessment, and know-how transfer to the beneficiary.</p></li>
+    </ol>
+    <div class="gantt" role="img" aria-label="Timeline over 24 weeks: emulgel development weeks 1 to 6, reformulation weeks 6 to 13, evaluation weeks 14 to 21, sustainability and transfer weeks 20 to 24; project website throughout">
+      <div class="g-row"><span>Emulgels (O1)</span><div class="g-track"><i style="left:0;width:25%"></i></div></div>
+      <div class="g-row"><span>Reformulation (O2)</span><div class="g-track"><i style="left:20.8%;width:33.4%"></i></div></div>
+      <div class="g-row"><span>Evaluation (O3)</span><div class="g-track"><i style="left:54.2%;width:33.3%"></i></div></div>
+      <div class="g-row"><span>Transfer (O4)</span><div class="g-track"><i style="left:79.2%;width:20.8%"></i></div></div>
+      <div class="g-row"><span>Website</span><div class="g-track"><i style="left:4.2%;width:95.8%;opacity:0.45"></i></div></div>
+      <div class="g-axis"><span></span><div><span>wk 1</span><span>6</span><span>12</span><span>18</span><span>24</span></div></div>
+    </div>
+    <p style="font-size:0.82rem;color:var(--muted)">Photographs of the emulgels and of the project's croissant batches will be added as the work progresses.</p>
+  </div></section>
+
+  <section id="results"><div class="wrap stack">
+    <span class="kicker">Results</span>
+    <h2>What the project leaves behind</h2>
+    <ul class="plain">
+      <li>an optimised protein-oil emulgel formulation validated as a laminating fat for croissant dough;</li>
+      <li>a technological recipe for reduced-fat croissants with sourdough;</li>
+      <li>a comparative quality report (physico-chemical, rheological, microbiological and sensory) against the control product;</li>
+      <li>a product technical sheet, nutritional profile per 100 g, storage conditions and a HACCP plan for the production flow;</li>
+      <li>a sustainability and circular-economy report, including a screening LCA;</li>
+      <li>technological recommendations and good-practice guides for Dina Selin, and preliminary documentation for a possible patent application.</li>
+    </ul>
+    <p>Results obtained: <span class="todo">public summary, at project end</span></p>
+    <p>Dissemination: <span class="todo">articles, conference papers, events</span></p>
+  </div></section>
+
+  <section id="team"><div class="wrap stack">
+    <span class="kicker">Team</span>
+    <h2>The researchers</h2>
+    <p class="goal">Four researchers from the Faculty of Food Science and Technology, USAMV Cluj-Napoca, working in food biotechnology, lipid science, rheology and food safety.</p>
+    <div class="grid2">
+      <div class="member">
+        <img src="ciont.jpg" alt="Portrait of Călina Cristina Ciont" width="116" height="116">
+        <div class="txt">
+          <span class="kicker">Project lead</span>
+          <h3>Dr. Călina Cristina Ciont</h3>
+          <p>Teaching Assistant at the Faculty of Food Science and Technology since 2024, with a PhD in Biotechnology (2025, <em>summa cum laude</em>) on iron oxide nanoparticles carried by probiotics. Before her doctorate she worked in quality control at FrieslandCampina in Cluj-Napoca. She is co-inventor on the OSIM patent application RO138194A2, has 24 published articles and an h-index of 10 (Web of Science), and is a member of the MSCA Staff Exchanges projects RIA4FOOD and FEEDACTIV.</p>
+          <div class="links"><a href="https://orcid.org/0000-0001-5284-0683">ORCID</a></div>
+        </div>
+      </div>
+      <div class="member">
+        <img src="teleky.jpg" alt="Portrait of Bernadette-Emőke Teleky" width="116" height="116">
+        <div class="txt">
+          <span class="kicker">Team member</span>
+          <h3>Dr. Bernadette-Emőke Teleky</h3>
+          <p>Scientific Researcher II, with doctorates in Mechanical Engineering (2016) and Biotechnology (2025, <em>summa cum laude</em>). Her expertise in the rheological characterisation of food systems (elastic and viscous moduli, yield points) supports the production and characterisation of the emulgels and the interpretation of the experimental data. She led the postdoctoral project Bio-Cycle and has authored more than 60 indexed publications.</p>
+          <div class="links"><a href="https://orcid.org/0000-0003-3672-8717">ORCID</a></div>
+        </div>
+      </div>
+      <div class="member">
+        <img src="muresan.jpg" alt="Portrait of Vlad Mureșan" width="116" height="116">
+        <div class="txt">
+          <span class="kicker">Team member</span>
+          <h3>Prof. Dr. Vlad Mureșan</h3>
+          <p>Professor and Vice-Rector for Research at USAMV Cluj-Napoca. He works on lipid science and innovative lipid structures in foods, including oleogels and emulgels as functional replacers of saturated fats and their behaviour in bakery and pastry products, and has led research on reformulating fatty ingredients. h-index 29 (Google Scholar).</p>
+          <div class="links"><a href="https://orcid.org/0000-0003-2113-422X">ORCID</a></div>
+        </div>
+      </div>
+      <div class="member">
+        <img src="tanislav.jpg" alt="Portrait of Anda Elena Tanislav" width="116" height="116">
+        <div class="txt">
+          <span class="kicker">Team member</span>
+          <h3>Anda Elena Tanislav</h3>
+          <p>PhD candidate in Biotechnology at USAMV Cluj-Napoca since 2021, with degrees in food engineering. She works on structured lipids, their thermo-oxidative behaviour and their functionality in foods, and is a research assistant in the national young-teams project PN-IV-P2-2.1-TE-2023-1206 on structured edible lipid systems. She is first author of a 2024 study on fully replacing conventional fat with oleogel in five pastry products.</p>
+          <div class="links"><a href="https://orcid.org/0000-0002-9136-4832">ORCID</a></div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="partners"><div class="wrap stack">
+    <span class="kicker">Partners</span>
+    <h2>A pastry workshop and a university</h2>
+    <div class="grid2">
+      <div class="org">
+        <div class="marks"><img src="dinaselin.jpg" alt="Dina Selin pastry and confectionery logo"></div>
+        <span class="kicker" style="color:var(--gold)">Beneficiary</span>
+        <h3>Dina Selin · DINA SELIN SWEETS SRL</h3>
+        <p>A family-run pastry and confectionery workshop in Dej, known locally for artisanal products: choux pastries, macarons, platters, savoury pastries, candy bars, custom and wedding cakes. It grew from a small business started in 2011 as Selin Dina Întreprindere Individuală.</p>
+        <p>Based on its 2024 financial statements, it ranked first in Top Profit România 2025 among food-industry micro-enterprises in Dej. Through this project it is extending its range towards premium pastry products with an improved nutritional profile.</p>
+        <div class="tags"><span>Artisanal pastry</span><span>Top Profit România 2025</span></div>
+        <p>Beneficiary lead: Cristina Selin</p>
+        <p><a href="https://dina-selin.ro/">dina-selin.ro</a> · <a href="https://www.instagram.com/dina.selin">Instagram</a></p>
+      </div>
+      <div class="org">
+        <div class="marks"><img src="usamv.png" alt="USAMV Cluj-Napoca logo"><img src="sta.png" alt="Faculty of Food Science and Technology logo"></div>
+        <span class="kicker">RDI service provider</span>
+        <h3>USAMV Cluj-Napoca</h3>
+        <p>The University of Agricultural Sciences and Veterinary Medicine Cluj-Napoca, founded in 1869. The work is carried out at the Faculty of Food Science and Technology, with the university's own staff and research infrastructure, including HPLC, GC-MS, FTIR, rheometry and proximate-analysis equipment.</p>
+        <p><a href="https://eertis.eu/erio-2300-000j-4198">Research infrastructure (EERTIS)</a></p>
+      </div>
+    </div>
+    <dl class="ledger" aria-label="Project fact sheet">
+      <div><dt>Call</dt><dd class="mono">PN-IV-INO-CI-2025-1</dd></div>
+      <div><dt>Project code</dt><dd class="mono">PN-IV-P7-7.1-CI-2025-0058</dd></div>
+      <div><dt>Funding contract</dt><dd>no. 13CI/2026</dd></div>
+      <div><dt>Implementation period</dt><dd>6 July - 31 December 2026</dd></div>
+      <div><dt>Total value</dt><dd>50,000 RON</dd></div>
+      <div><dt>Public funding</dt><dd>45,000 RON</dd></div>
+      <div><dt>Beneficiary contribution</dt><dd>5,000 RON</dd></div>
+    </dl>
+  </div></section>
+
+  <section id="contact"><div class="wrap" style="display:flex;flex-direction:column;gap:16px">
+    <span class="kicker">Contact</span>
+    <h2>Get in touch</h2>
+    <p>Dr. Călina Cristina Ciont<br>Faculty of Food Science and Technology, USAMV Cluj-Napoca<br>Calea Mănăștur 3-5, 400372 Cluj-Napoca, Romania</p>
+    <div class="contact">
+      <span class="mail" id="mail">calina.ciont@usamvcluj.ro</span>
+      <button class="copy" id="copy" type="button">Copy address</button>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="logos" aria-label="Logos">
+    <img src="uefiscdi.png" alt="UEFISCDI logo">
+    <img src="usamv.png" alt="USAMV Cluj-Napoca logo">
+    <img src="sta.png" alt="Faculty of Food Science and Technology logo">
+    <img src="dinaselin.jpg" alt="Dina Selin logo">
+  </div>
+  <p>This project is funded by the Romanian Ministry of Education and Research, through UEFISCDI, under the National Plan for Research, Development and Innovation 2022-2027 (PNCDI IV), Innovation Voucher instrument, project code PN-IV-P7-7.1-CI-2025-0058, contract no. 13CI/2026.</p>
+  <p>Last updated: 16 October 2026</p>
+</div></footer>
+</div>
+
+<script>
+(function () {
+  var b = document.getElementById('copy'), m = document.getElementById('mail');
+  b.addEventListener('click', function () {
+    var done = function () { b.textContent = 'Address copied'; setTimeout(function () { b.textContent = 'Copy address'; }, 2000); };
+    var fallback = function () { var rg = document.createRange(); rg.selectNodeContents(m); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(rg); b.textContent = 'Address selected'; };
+    try { navigator.clipboard.writeText(m.textContent).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+<script>
+// keep the current section when switching language
+document.querySelectorAll('a.lang').forEach(function (a) {
+  a.addEventListener('click', function () { if (location.hash) a.href = a.getAttribute('href').split('#')[0] + location.hash; });
+});
+</script>
+</body>
+</html>
